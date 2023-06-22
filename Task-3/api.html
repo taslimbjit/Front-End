@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>API Data Table</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <!-- Include DataTables CSS -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+  <link rel="stylesheet" href="api.css">
+
+</head>
+<h2>Cryptocurrency Data</h2>
+<body>
+  <div class="container">
+    <table class="table table-striped" id="myTable" >
+      <thead>
+        <tr class="thead-dark">
+          <th>id</th>
+          <th>rank</th>
+          <th>symbol</th>
+          <th>name</th>
+          <th>supply</th>
+          <th>maxSupply</th>
+          <th>marketCapUsd</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Table body will be populated dynamically -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Include Bootstrap JS and DataTables JS -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+  <script src="api.js"></script>
+</body>
+</html>

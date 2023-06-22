@@ -1,0 +1,1 @@
+student card - using props then use state to print array - using map

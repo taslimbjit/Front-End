@@ -1,0 +1,8 @@
+.custom-table .rdt_TableHead {
+  background-color: #181515;
+}
+
+.custom-table .rdt_TableHead .rdt_TableCol {
+  color: #1b1313;
+  font-weight: bold;
+}

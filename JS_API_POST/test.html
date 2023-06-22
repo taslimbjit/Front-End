@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="script.js"></script>
+</head>
+<body>
+  <form id="loginForm">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required>
+    
+    <label for="year">Year</label>
+    <input type="number" id="year" name="year" required>
+    
+    <label for="price">Price</label>
+    <input type="number" step="0.01" id="price" name="price" required>
+    
+    <label for="cpu">CPU model</label>
+    <input type="text" id="cpu" name="cpu" required>
+    
+    <label for="hardDisk">Hard disk size</label>
+    <input type="text" id="hardDisk" name="hardDisk" required>
+    
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('#loginForm');
+      
+      form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        
+        const name = document.querySelector('#name').value;
+        const year = parseInt(document.querySelector('#year').value);
+        const price = parseFloat(document.querySelector('#price').value);
+        const cpu = document.querySelector('#cpu').value;
+        const hardDisk = document.querySelector('#hardDisk').value;
+        
+        const data = {
+          name: name,
+          data: {
+            year: year,
+            price: price,
+            "CPU model": cpu,
+            "Hard disk size": hardDisk
+          }
+        };
+        
+        fetch('https://api.restful-api.dev/objects', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
+          // Log the response data to the console
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          // Handle error response from API
+        });
+      });
+    });
+  </script>
+</body>
+</html>
